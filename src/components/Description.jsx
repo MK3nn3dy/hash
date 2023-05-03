@@ -37,15 +37,16 @@ const Description = () => {
                     <div id="hash-description">
                         <br />
                         <br />
-                        <p >This very basic hash takes in the key to be added and the size of the hash map.
+                        <p >This very basic hash function takes in the key to be added and the size of the hash map.
                             It then loops through the characters of the key and sums the ASCII codes. Finally it returns
-                            the sum modulo the hash map size. This will be used as the index for this new item.</p><br/>
-                        <p>If there is no element at the returned index in the hash map, the new element is added at that index. If there's already an element at that
-                            index, the type of the element is checked. If the current element is already of type array, the new item is pushed to that
-                            existing array. If the current element is a single item, a new array is created that contains the original element and the new element.
-                            This array is then put at the index.
+                            the sum modulo the hash map size.</p><br/>
+                        <p>The new element (an object containing its key AND value) is then added to an array at that index in the hash map.
+                            This is done so that if two keys are hashed to the same index, they can both be stored in the array at
+                            that index.
                         </p><br/>
-                        <p>Items are then retrieved via their index, plus the key if the index is an array.</p><br />
+                        <p>To retrieve an item, we hash the key we're looking for to get the index. Then we use
+                            the key itself to access the element in the array at that index. This is why the key itself must be stored
+                            with the value.</p><br />
                         <p></p>
                     </div>
                 )

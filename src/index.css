@@ -82,6 +82,7 @@ button:hover {
 #hash-table {
   position: relative;
   display: grid;
+  height: 16.4rem;
   align-content: flex-start;
   grid-template-columns: 1fr; 
   grid-template-rows: auto;

@@ -3,7 +3,7 @@ const Navbar = () => {
 
     return (
         <nav id="top-navigation">
-            <h1>Hash Table Visualised</h1>
+            <h1>HashViz</h1>
         </nav>
     )
 }
