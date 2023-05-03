@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addValue } from "../slices/HashSlice";
 import { setError } from "../slices/MainSlice";
 import hashFunction from '../utils/hashFunction.js';
-import { updateCurrentEntry } from "../slices/CurrentEntrySlice";
+import { updateCurrentEntry, setIsShared } from "../slices/CurrentEntrySlice";
 
 const AddForm = () => {
 
@@ -15,6 +15,9 @@ const AddForm = () => {
     let enteredValue = useRef(null);
 
     const handleSubmit = (e) => {
+
+        // reset whether last element shares an index
+        dispatch(setIsShared(false));
 
         e.preventDefault();
 
@@ -43,6 +46,12 @@ const AddForm = () => {
         if(!taken){
 
             let index = hashFunction(enteredKey.current.value, 100);
+
+            // before dispatching new element, check if that index has anything there.
+            // if so, set shared index to true in state
+            if(currentState[index] != undefined){
+                dispatch(setIsShared(true))
+            }
 
             dispatch(addValue({ index, key: enteredKey.current.value, value: enteredValue.current.value}));
 

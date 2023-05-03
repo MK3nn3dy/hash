@@ -8,6 +8,7 @@ const CurrentEntrySlice = createSlice({
     currentLetters: null,
     currentASCII: null,
     currentASCIITotal: null,
+    isShared: false,
   },
   reducers: {
     updateCurrentEntry: (state, action) => {
@@ -17,9 +18,12 @@ const CurrentEntrySlice = createSlice({
       state.currentASCII = action.payload.currentASCII;
       state.currentASCIITotal = action.payload.currentASCIITotal;
     },
+    setIsShared: (state, action) => {
+      state.isShared = action.payload;
+    },
   },
 });
 
-export const { updateCurrentEntry } = CurrentEntrySlice.actions;
+export const { updateCurrentEntry, setIsShared } = CurrentEntrySlice.actions;
 
 export default CurrentEntrySlice.reducer;

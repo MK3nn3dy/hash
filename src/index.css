@@ -63,6 +63,14 @@ button {
   border-radius: 50%;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+#submit-entry:hover {
+  background-color: rgb(113, 233, 183);
+}
+
 .no-entries-placeholder {
   display: grid;
   width: 100%;
@@ -205,6 +213,11 @@ button {
   right: .5rem;
   background-color: rgb(238, 94, 125);
   color: black;
+}
+
+#dismiss-error:hover {
+  cursor: pointer;
+  background-color: rgb(240, 132, 155);
 }
 
 #code-snippet {
